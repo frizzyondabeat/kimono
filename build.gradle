@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+//    implementation 'org.glassfish.jaxb:jaxb-runtime:4.0.0'
+    runtimeOnly('com.sun.xml.bind:jaxb-impl:4.0.0')
+    runtimeOnly('org.projectlombok:lombok:1.18.24')
+//    implementation('javax.activation:activation:1.1.1')
+    implementation('org.glassfish.jaxb:jaxb-core:4.0.0')
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.10.0"))
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+    implementation("org.projectlombok:lombok:1.18.24")
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+
+
+
+
+test {
+    useJUnitPlatform()
+}
